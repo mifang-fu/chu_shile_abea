@@ -14,7 +14,7 @@ class App extends React.Component {
   render=()=> {
      return (
         <div>
-           <Content updateStateProp = {this.updateState} myDataProp = {this.state.data}></Content>
+           <Content updateStateProp = {()=>this.updateState} myDataProp = {this.state.data}></Content>
         </div>
      );
   }
@@ -23,7 +23,7 @@ class Content extends React.Component {
   render=()=> {
      return (
         <div>
-           <button onClick = {this.props.updateStateProp}>我是Content子元件的按鈕</button>
+           <button onClick = {()=>this.props.updateStateProp}>我是Content子元件的按鈕</button>
            <h3>{this.props.myDataProp}</h3>
         </div>
      );
